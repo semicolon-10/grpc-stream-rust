@@ -1,12 +1,10 @@
-
-
 use std::time::Duration;
 
 use tokio_stream::{Stream, StreamExt};
 use tonic::transport::Channel;
 
-use crate::pb::stream_client::StreamClient;
-use crate::pb::StreamRequest;
+use pb::stream_client::StreamClient;
+use pb::StreamRequest;
 
 pub mod pb {
     tonic::include_proto!("stream");
@@ -34,7 +32,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("Streaming echo:");
     streaming_echo(&mut client, 5).await;
     tokio::time::sleep(Duration::from_secs(1)).await;
-
 
     Ok(())
 }

@@ -4,7 +4,7 @@ use tokio::sync::mpsc;
 use tokio_stream::{Stream, StreamExt, wrappers::ReceiverStream};
 use tonic::{Request, Response, Status, transport::Server};
 
-use crate::pb::{StreamRequest, StreamResponse};
+use pb::{StreamRequest, StreamResponse};
 
 pub mod pb {
     tonic::include_proto!("stream");
