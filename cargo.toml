@@ -1,0 +1,27 @@
+[package]
+name = "rust-playground"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tonic = "0.11.0"
+prost = "0.12.6"
+tokio = {version = "1.38.0", features = ["full"]}
+tokio-stream = "0.1.15"
+h2 = "0.4.5"
+async-stream = "0.3.5"
+futures-util = "0.3.30"
+
+[build-dependencies]
+tonic-build = "0.11.0"
+
+[[bin]]
+name = "grpc-server"
+path = "src/server.rs"
+
+
+[[bin]]
+name = "grpc-client"
+path = "src/client.rs"
