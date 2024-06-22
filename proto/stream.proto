@@ -12,9 +12,3 @@ message StreamRequest {
 message StreamResponse {
   string message = 1;
 }
-
-
-fn main() -> Result<(), Box<dyn std::error::Error>> {
-    tonic_build::compile_protos("proto/stream.proto")?;
-    Ok(())
-}
